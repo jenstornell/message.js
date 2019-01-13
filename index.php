@@ -7,31 +7,29 @@
 
   <title>message.js</title>
   
-  <link rel="stylesheet" href="assets/css/dist/message.min.css">
+  <link rel="stylesheet" href="assets/css/dist/message.min.css?t=<?= time(); ?>">
 </head>
 <body>
 
-<ms-box data-success data-show-text>
-  <ms-box-icon></ms-box-icon>
-  <ms-box-text>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aliquam sed odio sapien. Maecenas vel arcu eu nibh fermentum pellentesque.</p>
-    <p>Pellentesque semper eu erat vel sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras vestibulum ipsum non sem volutpat feugiat. Morbi eu ornare ex. Cras euismod volutpat porta. Maecenas eu nibh quis arcu aliquet pharetra. Duis non erat consequat ex sollicitudin fringilla ut quis magna.
-    Donec non commodo nibh.</p>
-  </ms-box-text>
-  <ms-close-button></ms-close-button>
-</ms-box>
+<div class="test"></div>
 
 <button>Trigger</button>
 
-<script src="assets/js/dist/message.min.js"></script>
+<script src="assets/js/dist/message.js?t=<?= time(); ?>"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-	affiliateBeautifier.init({
-		selector: 'a'
+let message = new Message();
+message.init();
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('button').addEventListener('click', (e) => {
+    message.open({
+      text: 'When close or autohide, reset data attributes like options',
+      type: 'info',
+      autohide: false,
+      openText: false
     });
+  });
 });
-kirbyRatings.init('http://www.vardagsfinans.se');
 </script>
 
 </body>
