@@ -60,7 +60,7 @@ message.open({
 });
 ```
 
-**Type `success` defaults
+**Type `success` defaults**
 
 On a success message, just a check-icon is visible by default and autohides after a time interval. When clicking the icon, you can still see the text message if any.
 
