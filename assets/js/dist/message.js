@@ -31,7 +31,7 @@ class Message {
   // Open message box
   open(options) {
     window.clearTimeout(this.timeout);
-    this.o = Object.assign({}, this.defaults(), options);
+    this.o = Object.assign({}, this.defaults(options.type), options);
 
     document.querySelector('ms-box').dataset.open = '';
     document.querySelector('ms-box').dataset.type = this.o.type;

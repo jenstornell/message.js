@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     message.open({
       text: 'When close or autohide, reset data attributes like options',
       type: 'error',
-      autohide: true,
-      openText: false
+      //autohide: true,
+      //openText: false
     });
   });
 });
