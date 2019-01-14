@@ -22,10 +22,17 @@ ms-box {
   z-index: 1000;
   display: flex;
   border-radius: .25rem;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s .5s, opacity .5s linear; }
+  visibility: hidden; }
+  ms-box[data-autohide] {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .5s, opacity .5s linear; }
   ms-box[data-open] {
+    visibility: visible;
+    opacity: 1; }
+  ms-box[data-open][data-autohide] {
+    transition: opacity 0s linear; }
+  ms-box[data-open][data-open-text] {
     visibility: visible;
     opacity: 1;
     transition: opacity 0s linear; }
@@ -57,7 +64,6 @@ ms-box {
     display: none;
     border-radius: .25rem; }
   ms-box[data-open-text] {
-    transition: none;
     padding: 1rem; }
     ms-box[data-open-text] ms-box-text {
       display: block; }

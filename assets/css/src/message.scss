@@ -27,12 +27,24 @@ ms-box {
   z-index: 1000;
   display: flex;
   border-radius: .25rem;
-
   visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s .5s, opacity .5s linear;
+
+  &[data-autohide] {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .5s, opacity .5s linear;
+  }
 
   &[data-open] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &[data-open][data-autohide] {
+    transition: opacity 0s linear;
+  }
+
+  &[data-open][data-open-text] {
     visibility: visible;
     opacity: 1;
     transition: opacity 0s linear;
@@ -76,7 +88,7 @@ ms-box {
   }
 
   &[data-open-text] {
-    transition: none;
+    //transition: none;
     padding: 1rem;
 
     ms-box-text {
