@@ -1,5 +1,7 @@
 # message.js
 
+![Screenshot](screenshot.png)
+
 ## In short
 
 - Vanilla js

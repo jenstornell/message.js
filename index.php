@@ -23,10 +23,10 @@ message.init();
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button').addEventListener('click', (e) => {
     message.open({
-      text: 'When close or autohide, reset data attributes like options',
-      type: 'error',
-      //autohide: true,
-      //openText: false
+      text: 'Hello there!',
+      type: 'warning',
+      autohide: false,
+      openText: true
     });
   });
 });
