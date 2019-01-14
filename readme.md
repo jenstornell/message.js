@@ -1,5 +1,7 @@
 # message.js
 
+A message library to alert the user. Can be especially useful in ajax requests.
+
 ![Screenshot](screenshot.png)
 
 ## In short
