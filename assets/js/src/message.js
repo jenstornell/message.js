@@ -5,10 +5,8 @@ class Message {
   }
 
   events() {
-    document.addEventListener('DOMContentLoaded', () => {
-      this.onOpenTextClick();
-      this.onCloseMessageClick();
-    });
+    this.onOpenTextClick();
+    this.onCloseMessageClick();
   }
 
 

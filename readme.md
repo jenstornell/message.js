@@ -1,5 +1,7 @@
 # message.js
 
+*Version 1.0*
+
 A message library to alert the user. Can be especially useful in ajax requests.
 
 ![Screenshot](screenshot.png)
@@ -25,17 +27,16 @@ The HTML needed is automatically injected before the end body tag, so no additio
 
 ### Javascript
 
+It does not check if DOM has loaded, because you may trigger the message from an ajax function or somewhere else. Therefor in this example I put the `message.open()` inside a dom content loaded event.
+
 ```html
 <script src="assets/js/dist/message.min.js"></script>
 <script>
 let message = new Message();
 message.init();
 
-message.open({
-  text: 'Error!',
-  type: 'error',
-  autohide: false,
-  openText: true,
+document.addEventListener('DOMContentLoaded', () => {
+  message.open({ type: 'success' });
 });
 </script>
 ```

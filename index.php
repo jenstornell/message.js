@@ -23,10 +23,9 @@ message.init();
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button').addEventListener('click', (e) => {
     message.open({
-      text: 'Hello there!',
-      type: 'warning',
-      autohide: false,
-      openText: true
+      type: 'success',
+      autohide: true,
+      openText: false
     });
   });
 });
