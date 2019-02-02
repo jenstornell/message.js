@@ -14,6 +14,7 @@ class Message {
 
   onOpenTextClick() {
     document.querySelector('ms-box-icon').addEventListener('click', (e) => {
+      if(document.querySelector('ms-box-text').innerHTML === '') return;
       this.openText();
     });
   }
@@ -45,15 +46,24 @@ class Message {
     } else {
       delete document.querySelector('ms-box').dataset.openText;
     }
-    document.querySelector('ms-box-text').innerHTML = this.o.text;
-
+    
+    this.setText();
     this.autohide();
     if(this.o.openText) {
       this.openText();
     }
   }
 
+  setText() {
+    if(typeof this.o.text !== 'undefined') {
+      document.querySelector('ms-box-text').innerHTML = this.o.text;
+    } else {
+      document.querySelector('ms-box-text').innerHTML = '';
+    }
+  }
+
   has(data) {
+    console.log('test');
     return (typeof data !== 'undefined');
   }
 

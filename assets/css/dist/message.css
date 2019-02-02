@@ -2,10 +2,6 @@
   padding: 0;
   margin: 0; }
 
-:root {
-  --warning-bkg: hsl(45, 100%, 51%);
-  --warining-color: hsl(210, 10%, 23%); }
-
 .test {
   background: #fff;
   height: 2000px;
@@ -42,11 +38,11 @@ ms-box {
     background-position: center;
     background-repeat: no-repeat;
     display: block;
-    padding: .5rem; }
+    padding: .4rem; }
   ms-box ms-box-text {
     display: none;
     flex: 1;
-    margin-left: 1rem;
+    padding: .4rem;
     line-height: 1.3; }
     ms-box ms-box-text p {
       margin-bottom: 1rem; }
@@ -57,23 +53,20 @@ ms-box {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.25);
-    padding: .5rem;
     height: 24px;
     width: 24px;
     margin-left: 1rem;
     display: none;
     border-radius: .25rem; }
   ms-box[data-open-text] {
-    padding: 1rem; }
+    padding: .2rem; }
     ms-box[data-open-text] ms-box-text {
       display: block; }
     ms-box[data-open-text] ms-close-button {
-      display: block; }
+      display: block;
+      padding: .2rem; }
     ms-box[data-open-text] ms-box-icon {
-      padding: 0;
-      background-size: 32px;
-      height: 32px;
-      width: 32px; }
+      display: none; }
   ms-box[data-type="success"] {
     background-color: #29a847;
     color: #fff; }

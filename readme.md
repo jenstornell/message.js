@@ -1,6 +1,6 @@
 # message.js
 
-*Version 1.0*
+*Version 1.1*
 
 A message library to alert the user. Can be especially useful in ajax requests.
 
