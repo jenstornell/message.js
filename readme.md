@@ -1,6 +1,6 @@
 # message.js
 
-*Version 1.1*
+*Version 1.2*
 
 A message library to alert the user. Can be especially useful in ajax requests.
 
@@ -11,6 +11,7 @@ A message library to alert the user. Can be especially useful in ajax requests.
 - Vanilla js
 - No dependencies
 - Small filesize
+- Autoload init
 - Super simple setup
 
 ## Usage
@@ -25,6 +26,16 @@ The HTML needed is automatically injected before the end body tag, so no additio
 <link rel="stylesheet" href="assets/css/dist/message.min.css">
 ```
 
+###  HTML
+
+You don't need to add anything to your HTML.
+
+If you want to prevent the script to be autoloaded, add `data-message-autoload` to `false` in your body tag. Not recommended.
+
+```js
+<body data-message-init="false">
+```
+
 ### Javascript
 
 It does not check if DOM has loaded, because you may trigger the message from an ajax function or somewhere else. Therefor in this example I put the `message.open()` inside a dom content loaded event.
@@ -32,11 +43,8 @@ It does not check if DOM has loaded, because you may trigger the message from an
 ```html
 <script src="assets/js/dist/message.min.js"></script>
 <script>
-let message = new Message();
-message.init();
-
 document.addEventListener('DOMContentLoaded', () => {
-  message.open({ type: 'success' });
+  message.open('success');
 });
 </script>
 ```
@@ -45,19 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### open
 
-When using this method, you need to send a few params with it.
+The first param is the `type`. It can be `error`, `info`, `success` or `warning`.
+
+When using this method, you need to send a few options with it.
 
 - `text` - The text message that will be displayed.
-- `type` - The "theme" of the message. It can be `error`, `info`, `success` or `warning`.
 - `autohide` - If the text message is set to be closed, the box icon will fade away after a time limit.
 - `openText` - You can choose to have the text message opened or closed when box is opened.
 
 ```js
 let message = new Message();
 
-message.open({
+message.open('error', {
   text: 'Hello! This is an error!',
-  type: 'error',
   autohide: false,
   openText: true
 });
